@@ -3,6 +3,9 @@
 # keyboard
 setxkbmap us -variant intl &
 
+# numlock
+numlockx &
+
 # cursor
 xsetroot -cursor_name left_ptr
 
