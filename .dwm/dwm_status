@@ -1,0 +1,17 @@
+#!/bin/sh
+
+while true; do
+    cpu=$(grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print int(usage)}')
+
+    ram_used=$(free -h | awk '/^Mem.:/ {print $3}')
+    ram_total=$(free -h | awk '/^Mem.:/ {print $2}')
+
+    disk_used=$(df -h / | awk 'NR==2 {print $3}')
+    disk_total=$(df -h / | awk 'NR==2 {print $2}')
+
+    datetime=$(date '+%d/%m/%Y %H:%M:%S')
+
+    xsetroot -name "cpu ${cpu}% | mem ${ram_used}/${ram_total} | ssd ${disk_used}/${disk_total} | ${datetime}"
+
+    sleep 1
+done
