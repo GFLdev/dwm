@@ -28,6 +28,7 @@ xrandr \
 "$HOME"/.config/feh/set_bg &
 
 # audio
+pipewire-pulse &
 gentoo-pipewire-launcher &
 
 # compositor
