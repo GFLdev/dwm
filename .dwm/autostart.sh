@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# mopidy
+pkill mpd
+mpd &
+
 # keyboard
 setxkbmap us -variant intl &
 
