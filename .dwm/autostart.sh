@@ -1,11 +1,16 @@
 #!/bin/sh
 
-# mopidy
+# mpd
 pkill mpd
 mpd &
 
 # keyboard
 setxkbmap us -variant intl &
+
+# wacom
+xsetwacom list devices | awk '{print $8}' | while read -r id; do
+  xsetwacom --set "$id" MapToOutput "HDMI-A-0"
+done
 
 # numlock
 numlockx &
