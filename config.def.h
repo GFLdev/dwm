@@ -25,7 +25,8 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"dev", "sys", "www", "doc", "mus"};
+static const char *tags[] = {"con", "dev", "www", "dba", "sys",
+                             "ssh", "doc", "cfg", "mus", "etc"};
 
 static const Rule rules[] = {
     /* xprop(1):
